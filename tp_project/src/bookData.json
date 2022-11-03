@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "title": "Book1",
+        "author": "Author1",
+        "ISBN": "ISBN1",
+        "cost": "$1.00",
+        "book_img": "images/img1"
+    },
+    {
+        "id": "2",
+        "title": "Book2",
+        "author": "Author2",
+        "ISBN": "ISBN2",
+        "cost": "$2.00",
+        "book_img": "images/img2"
+    },
+    {
+        "id": "3",
+        "title": "Book3",
+        "author": "Author3",
+        "ISBN": "ISBN3",
+        "cost": "$3.00",
+        "book_img": "images/img3"
+    },
+    {
+        "id": "4",
+        "title": "Book4",
+        "author": "Author4",
+        "ISBN": "ISBN4",
+        "cost": "$4.00",
+        "book_img": "images/img4"
+    },
+    {
+        "id": "5",
+        "title": "Book5",
+        "author": "Author5",
+        "ISBN": "ISBN5",
+        "cost": "$5.00",
+        "book_img": "images/img5"
+    }
+]
