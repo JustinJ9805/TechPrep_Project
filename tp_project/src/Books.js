@@ -1,5 +1,8 @@
 import React from 'react';
 import bookData from './bookData.json';
+import './Books.css';
+
+
 
 function Books(){
     return(
@@ -7,12 +10,12 @@ function Books(){
             {
             bookData.map(books => {
                 return(
-                    <div className='box'>
-                        <h3>Title::</h3>{books.title}
-                        <h5>Author::</h5>{books.author}
-                        <h5>ISBN::</h5>{books.ISBN}
-                        <h5>Cost::</h5>{books.cost}
-
+                    <div className='container'>
+                        <h5>Title: {books.title}</h5>
+                        <h5>Author: {books.author}</h5>
+                        <h5>ISBN: {books.ISBN}</h5>
+                        <h5>Cost: {books.cost}</h5> 
+                        <img src={books.imageLink} alt='unavailable' height={100} width={100} />
                     </div>
                     )
                 }
