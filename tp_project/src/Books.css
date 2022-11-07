@@ -1,9 +1,39 @@
-.container{
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin: 2px 16px;
-    background-color: lightgrey;
-    color: black;
+.books {
+    background-color:lightyellow;
+    color:darkslategray;
+}
+.bookEntry{
+    background-color: rgba(211, 211, 211, .5);
+    margin: 4px 2px;
+    padding-left: 12.5%;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    
+}
+
+
+button{
+    padding: 4px 16px;
     margin: 4px;
+    background-color: gray;
+    color: white;
+    border-color: black;
+}
+.bookImg{
+    height: 200px;
+}
+
+
+
+.searchBar{
+    width: 1000px;
+    padding-left: 12.5%;
+    
+}
+.bookHeader{
+    padding-left: 12.5%;
+}
+
+.bold{
+    font-weight: bold;
 }
