@@ -1,8 +1,10 @@
 import { logDOM } from '@testing-library/react'
 import React, { Component } from 'react'
 import { Button } from '../Button'
-import{MenuItems} from './MeunItems'
+import{MenuItems} from './MenuItems'
 import './Navbar.css'
+
+
 class Navbar extends Component{
     state ={clicked: false}
 
@@ -11,29 +13,32 @@ class Navbar extends Component{
     }
     render(){
         return(
+            <div className='navigation'>
             <nav className='NavbarItems'>
-                <h1 className='navbar-logo'>React<i className='fab fa-react'>
+                
+                <h1 className='navbar-logo'> <img classname='icon_img' src={'/icon.png'} height={120} ></img> <i className='fab fa-react'>
                     </i>
                     <intput type="text" placeholder = "Search.."></intput>
                     </h1>   
                 <div className='menu-icon' onClick={this.handleClick}>
                     <i className={this.state.clicked ? 'fas fa-times': 'fas fa-bars'}></i>
                 </div>
-                <ul className={this.state.clicked ? 'nav-menu active': 'nav-menu'}>
+                <ul  className= {this.state.clicked ? 'nav-menu active': 'nav-menu'}>
                     {MenuItems.map((item,index)=>{
                         return (
                             <li key ={index}>
                                 <a className={item.cName} href={item.url}>
-                                {item.title}
+                                    <img src={item.src} alt='not found' height={40}></img>
+                                {/* {item.title} */}
                                 </a>
                             </li>
                         )
                     })}
                     
                 </ul>
-                <Button>Sign Up</Button>
+                
             </nav>
-
+            </div>
         )
           
     }

@@ -97,7 +97,9 @@ export default function PayPal() {
             </div>
 
         </PayPalScriptProvider>
+        
 
     );
+    
 
 }
