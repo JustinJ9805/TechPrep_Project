@@ -1,0 +1,71 @@
+body{
+    background-color: rgba(211, 211, 211, .5);
+    color:darkslategray;
+    
+}
+
+.searchBar{
+    width: 1000px;
+    padding-left: 12.5%;
+    
+}
+
+.buttons{
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    padding: 4px 16px;
+    margin: 4px;
+    background-color: gray;
+    color: white;
+    border-color: black;
+    
+}
+
+.sellers {
+    background-color:thistle;
+    
+    margin-right: 10px;
+    padding-top: 8px;
+}
+
+.buyers {
+    background-color: thistle;
+    
+    margin-left: 10px;
+    padding-top: 8px;
+}
+
+.tech{
+    margin-top: 10px;
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.tech{
+    padding:8px;
+    background-color: slategrey;
+    
+}
+
+.main_img{
+    border-radius: 25%;
+    border: solid;
+    border-color: white;
+    border-width: 4px;
+
+}
+
+ul{
+    list-style: none;
+}
+
+
+li{
+    padding: 2px;
+    padding-left: 10%;
+    padding-right: 10%;
+    
+}

@@ -7,6 +7,7 @@ function Books(){
     return(
         <div className='books container-fluid'>
             <br></br>
+            <br></br>
             <div className='searchBar row'>
                 <input type='text' placeholder='search...'></input>
             </div>
@@ -20,7 +21,9 @@ function Books(){
             {
             bookData.map(books => {
                 return(
+                    
                     <div className='bookEntry row'>
+                        
                         <img className='bookImg col-2' src={books.imageLink} alt='unavailable'/>
                         <div className='col'>
                             <h5 className='col bold'>{books.title}</h5>
@@ -38,8 +41,20 @@ function Books(){
                                     <option>Rent a Paperback:</option>
                                 </select>
                                 <br></br>
+                                <select className='col-2'>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
                                 <br></br>
-                                <button className='col bold'>Add to cart</button>
+                                <button className='books_button col bold'>Add to cart</button>
                             </div>
                             
                             

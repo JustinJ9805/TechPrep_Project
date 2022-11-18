@@ -3,6 +3,8 @@ import React from 'react'
 function SignIn() {
 	return (
 		<div>
+			<br></br>
+			<br></br>
 			<form>
 				<label>
 					Username:
@@ -13,7 +15,7 @@ function SignIn() {
 					<input type="password" name="pass" />
 				</label>
 				<br></br>
-				<input type="submit" value="Submit" />
+				<input type="submit" value="Sign In" />
 				<br/>
 				<h3>Not registered?</h3>
 				<button>Sign up</button>

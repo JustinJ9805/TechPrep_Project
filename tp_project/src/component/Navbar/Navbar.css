@@ -5,6 +5,9 @@
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
+    border-style: solid;
+    border-color: slategrey;
+    padding: 60px;
 }
 
 .navbar-logo{
@@ -132,5 +135,12 @@ fa-bars{
     Button{
         display: none;
     }
+  
     
 }
+
+.navigation{
+    position: fixed;
+    width: 100%;
+}
+
