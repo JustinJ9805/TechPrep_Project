@@ -1,4 +1,17 @@
 .entry{
-    background-color: lightgray;
+    background-color: #e1dee9;
+    color: #e55381;
     padding:8px
+}
+
+
+
+.cart_button1{
+    margin: 8px;
+    padding: 8px;
+}
+
+.cart_button2{
+    margin: 8px;
+    padding: 8px;
 }

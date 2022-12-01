@@ -1,105 +1,100 @@
-// JavaScript source code
 
-import React, { useState } from "react";
-import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
-import "./App.css";
+import { useState } from "react";
+import {
+    PayPalScriptProvider,
+    PayPalButtons,
+    PayPalMarks,
+} from "@paypal/react-paypal-js";
+
+
+
+// This values are the props in the UI
+//These values are currently hard coded but these will be either passed through props or will be fetched from backend api.
+// The values will differ according to the selected products. For example: If someone is paying 100$, amount will be 100 for him/her.
+// Same goes for currency and style
+const amount = "2";
+const currency = "USD";
+const style = { "color": "white" };
+
+
 
 export default function PayPal() {
-    const [show, setShow] = useState(false);
-    const [success, setSuccess] = useState(false);
-    const [ErrorMessage, setErrorMessage] = useState("");
-    const [orderID, setOrderID] = useState(false);
-
-    // creates a paypal order
-    const createOrder = (data, actions) => {
-        return actions.order
-            .create({
-                purchase_units: [
-                    {
-                        description: "Sunflower",
-                        amount: {
-                            currency_code: "USD",
-                            value: 20,
-                        },
-                    },
-                ],
-                // not needed if a shipping address is actually needed
-                application_context: {
-                    shipping_preference: "NO_SHIPPING",
-                },
-            })
-            .then((orderID) => {
-                setOrderID(orderID);
-                return orderID;
-            });
-    };
-
-    // check Approval
-    const onApprove = (data, actions) => {
-        return actions.order.capture().then(function (details) {
-            const { payer } = details;
-            setSuccess(true);
-        });
-    };
-    //capture likely error
-    const onError = (data, actions) => {
-        setErrorMessage("An Error occured with your payment ");
-    };
-    return (
-        <PayPalScriptProvider
-            options={{
-                "client-id": "",
-            }}
-        >
-            <div>
-                <div className="wrapper">
-                    <div className="product-img">
-                        <img
-                            src="https://cdn.pixabay.com/photo/2021/08/15/06/54/sunflower-6546993_1280.jpg"
-                            alt="SunFlower"
-                            height="420"
-                            width="327"
-                        />
-                    </div>
-                    <div className="product-info">
-                        <div className="product-text">
-                            <h1>Sunflower</h1>
-                            <h2>POPULAR HOUSE PLANT</h2>
-                            <p>
-                                Sunflowers are usually tall annual or perennial plants.
-                                <br />
-                                Each "flower" is actually a
-                                <br />
-                                disc made up of tiny flowers,
-                                <br />
-                                to better attract pollinators.{" "}
-                            </p>
-                        </div>
-
-                        <div className="product-price-btn">
-                            <p>
-                                <span>$20</span>
-                            </p>
-                            <button type="submit" onClick={() => setShow(true)}>
-                                Buy now
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                {show ? (
-                    <PayPalButtons
-                        style={{ layout: "vertical" }}
-                        createOrder={createOrder}
-                        onApprove={onApprove}
-                    />
-                ) : null}
-            </div>
-
-        </PayPalScriptProvider>
-        
-
+    // Funding sources are the three options that you can see on the screen. Yu can change it according to your desire.
+    // If you want to use Card option only, then you ca remove the other two options of paypal and paylater
+    const fundingSources = ["paypal", "card", "paylater"];
+    // Remember the amount props is received from the control panel
+    //By default the 1st option is selected and will change if a user selects some other option
+    const [selectedFundingSource, setSelectedFundingSource] = useState(
+        fundingSources[0]
     );
-    
 
+
+    // This is the function that changes the selected method to pay for the user
+    function onChange(event) {
+        setSelectedFundingSource(event.target.value);
+    }
+
+
+
+    return (
+//You need to wrap your component/code with the PayPalScriptProvider in order to use Paypal in your code
+<PayPalScriptProvider
+options={{
+"client-id": "AXI5_n92vi1fvfHMmWp6QQAeLqZQedDLC_tc9uNOEgVI-CcgivhxskY8Bfc6fbdIvmL8ptu-3fLT6SW2",
+components: "buttons,marks,funding-eligibility"
+}}
+>        
+<form style={{ minHeight: "200px" }}>
+{/* fundingSource.map is used to show the number of options you have added for the users to choose while making a payment
+In this code, we have used 3 options
+*/}
+{fundingSources.map((fundingSource) => (
+<label className="mark" key={fundingSource}>
+<input
+defaultChecked={
+fundingSource === selectedFundingSource
+}
+onChange={onChange}
+type="radio"
+name="fundingSource"
+value={fundingSource}
+/>
+<PayPalMarks fundingSource={fundingSource} />
+</label>
+))}
+</form>
+<br />
+<PayPalButtons
+fundingSource={selectedFundingSource}
+style={style}
+forceReRender={[selectedFundingSource, style, amount, currency]}
+createOrder={(data, actions) => {
+return actions.order
+.create({
+// This is where you are creating the order for paypal to execute
+purchase_units: [
+{
+amount: {
+currency_code: currency, // Here change the currency if needed
+value: amount, // Here change the amount if needed
+},
+},
+],
+})
+.then((orderId) => {
+// Your code here after create the order
+//This is where you can add any code once the order is successfully created.
+//Like you can show the user that his/her order is successfully created
+return orderId;
+});
+}}
+onApprove={(data, actions) => {
+return actions.order.capture().then(function (details) {
+// Your code here after approve the transaction
+//Here you can give an alert to the user that his/her transaction is completed
+});
+}}
+/>
+</PayPalScriptProvider >
+);
 }
