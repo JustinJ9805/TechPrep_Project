@@ -1,0 +1,66 @@
+.header{
+    padding: 2px 8px;
+    /* background: linear-gradient(90deg, rgb(10, 18, 71)0%, rgb(0, 0, 0)100%); */
+    background-color: #03012c;
+    position: fixed;
+    
+}
+
+.header_signIn{
+    background-color: #e1dee9;
+    border-style: solid;
+    border-color: #e55381;
+    color: #56018D;
+    font-weight: bold;
+    padding: 4px;
+    height: 40px;
+    width: 150px;
+    border-width: 4px;
+}
+
+.header_button{
+    background-color: #e1dee9;
+    border-style: solid;
+    border-color: #e55381;
+    color: #56018D;
+    font-weight: bold;
+    padding: 4px;
+    height: 40px;
+    width: 150px;
+    border-width: 4px;
+}
+
+.header_icon{
+    height: 50px;
+    width: 50px;
+    border-radius: 49%;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-width: 4px;
+}
+
+.header_searchBar{
+    height: 40px;
+    border-style: solid;
+    border-color: #e55381;
+    border-width: 4px;
+}
+
+.header_cart{
+    height: 50px;
+    width: 50px;
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-radius: 49%;
+    border-width: 4px;
+}
+
+.header_content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.createListing{
+    width: 200px;
+}

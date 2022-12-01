@@ -1,36 +1,48 @@
 import React from 'react'
+import { Modal } from 'react-bootstrap';
 import './Cart.css'
+import PayPal from './PayPal.js'
+
 
 function Cart(props){
     return(
         <div className='container-fluid'>
             <br></br>
             <h1>Shopping Cart</h1>
-            <div className='row'>
-                <div className='col-8'></div>
-                    <div className='row entry'>
-                        <img className='col-3' src = {props.imageLink} alt='not found'></img>
-                        <h3 className='col-1'>{props.productName}NAME</h3>
-                        <h3 className='col-1'>{props.price}PRICE</h3>
-                        <select className='col-1'>
-                            <option>1</option>
-                            <option>2</option>
-                            <option>3</option>
-                            <option>4</option>
-                            <option>5</option>
-                            <option>6</option>
-                            <option>7</option>
-                            <option>8</option>
-                            <option>9</option>
-                            <option>10</option>
-                        </select>
-                        <button className='col-2'>Remove from Cart</button>
-                        <button className='col-2'>Save for Later</button>
-                    </div>
-                    <div className='col-4'></div>
+            <div className='row d-flex entry'>
+                <img className='col-2' src='' alt='unable to load'></img>
+                <h5 className='col-2'>Name</h5>
+                <h5 className='col-2'>Price</h5>
                 
+                <button className='col-2 cart_button1'>Remove from Cart</button>
+                <button className='col-2 cart_button2'>Save for Later</button>
+                
+            </div>
 
+            <div className='cart_total row'>
+                    <h5>Pre-Tax Total</h5>
+                    <h5>Tax</h5>
+                    <h5>Total</h5>
+                    <PayPal/>
+                    
+                    
+            </div>
 
+            
+
+            <br></br>
+            <br></br>
+            <div className='Saved'>
+                <h1>Saved for Later</h1>
+                <div className='row d-flex entry'>
+                    <img className='col-2' src='' alt='unable to load'></img>
+                    <h5 className='col-2'>Name</h5>
+                    <h5 className='col-2'>Price</h5>
+                    
+                    <button className='col-2 cart_button1'>Move to Cart</button>
+                    <button className='col-2 cart_button2'>Delete</button>
+                
+                </div>
 
 
             </div>

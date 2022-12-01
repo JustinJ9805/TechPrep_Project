@@ -16,7 +16,7 @@ class Navbar extends Component{
             <div className='navigation'>
             <nav className='NavbarItems'>
                 
-                <h1 className='navbar-logo'> <img classname='icon_img' src={'/icon.png'} height={120} ></img> <i className='fab fa-react'>
+                <h1 className='navbar-logo'> <img classname='icon_img' src={'/icon.png'} height={120} width={120} style={{borderRadius:120/2}} ></img> <i className='fab fa-react'>
                     </i>
                     <intput type="text" placeholder = "Search.."></intput>
                     </h1>   
