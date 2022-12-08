@@ -2,4 +2,25 @@
     background-color: #e1dee9;
     padding: 8px;
     color: #e55381;
+    border-style: solid;
+    border-color: #56018D;
+    border-width: 4px;
+}
+
+.signUp_input{
+    border-style: solid;
+    border-color: #56018D;
+    margin-left: 8px;
+}
+
+.student{
+    padding: 8px;
+}
+
+.business{
+    padding: 8px;
+}
+
+.signUp_headings{
+    color: #56018D;
 }

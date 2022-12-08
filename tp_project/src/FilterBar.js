@@ -163,8 +163,9 @@ function FilterBar(){
     return(
         
         <div className="container-fluid filters">
-            
+            <br></br>
             <form className="row filter_from">
+        
                 <div className="col-3">
                     <h5>School</h5>
                     <select onChange={changeSelectOptionHandler}>

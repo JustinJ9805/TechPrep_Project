@@ -9,8 +9,10 @@ import SignUp from './SignUp';
 import AboutUs from './aboutUs/aboutUs.js';
 import Footer from './Footer';
 import Header from './Header';
-import CreateListing from './CreateListing';
+import ForSellers from './forSellers';
+import OrderHistory from './OrderHistory';
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 
 function App() {
   return (
@@ -31,7 +33,8 @@ function App() {
         <Route path='/books' element={<Books/>}/>
         <Route path='/cart' element={<Cart/>}/>
         <Route path='/aboutUs' element={<AboutUs/>}/>
-        <Route path='/createListing' element={<CreateListing/>}/>
+        <Route path='/forSellers' element={<ForSellers/>}/>
+        <Route path='/orderHistory' element={<OrderHistory/>}/>
         <Route path='*' element={<Main/>}/> 
       </Routes>
       <Footer/>

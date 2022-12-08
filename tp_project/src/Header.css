@@ -1,9 +1,8 @@
 .header{
     padding: 2px 8px;
     /* background: linear-gradient(90deg, rgb(10, 18, 71)0%, rgb(0, 0, 0)100%); */
-    background-color: #03012c;
+    background-color: #03012c ;
     position: fixed;
-    
 }
 
 .header_signIn{
@@ -31,8 +30,9 @@
 }
 
 .header_icon{
-    height: 50px;
-    width: 50px;
+    
+    height: 60px;
+    width: 60px;
     border-radius: 49%;
     border-style: solid;
     border-color: #FFFFFF;
@@ -46,14 +46,6 @@
     border-width: 4px;
 }
 
-.header_cart{
-    height: 50px;
-    width: 50px;
-    border-style: solid;
-    border-color: #FFFFFF;
-    border-radius: 49%;
-    border-width: 4px;
-}
 
 .header_content{
     display: flex;
@@ -63,4 +55,8 @@
 
 .createListing{
     width: 200px;
+}
+
+.cart{
+    margin-right: 10px;
 }

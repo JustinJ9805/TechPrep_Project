@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-
 function Header(){
 
     const [show,setShow] = useState(false);
@@ -32,12 +31,13 @@ function Header(){
                         </Modal.Body>
                         <Modal.Footer>
                             <a href={'./SignUp'}><Button onClick={handleClose}>Sign Up</Button></a>
+                            
                             <Button onClick={handleClose}>Sign In</Button>
                             <Button onClick={handleClose}>Close</Button>
                         </Modal.Footer>
                     </Modal>
                     
-                    <input className='col-4 header_searchBar' type={'text'} placeholder=' search'></input>
+                    <input className='col-3 header_searchBar' type={'text'} placeholder=' search'></input>
                     
                     <button onClick={handleShow2} className='createListing'>Create a Listing</button>
                     <Modal show={show2} onHide={handleClose2}>
@@ -45,15 +45,23 @@ function Header(){
                             <Modal.Title>Create a Listing</Modal.Title>
                         </Modal.Header>
                         <Modal.Body>
-                             What are you listing?
+                             Title
                              <br></br>
-                            <input type={'text'} name={'item'} placeholder={'Item...'}></input>
+                            <input type={'text'} name={'Title'}  placeholder={'Title'}></input>
+                            <br></br>
+                            Author
+                            <br></br>
+                            <input type={'text'} name={'Author'} placeholder={'Author'}></input>
+                            <br></br>
+                            ISBN
+                            <br></br>
+                            <input type={'text'} name={'ISBN'} placeholder={'ISBN'}></input>
                             <br></br>
                             What are you looking to do?
                             <br></br>
                             <select>
-                                <option>Sell it</option>
                                 <option>Loan it out</option>
+                                <option>Sell it</option>
                             </select>
                             <br></br>
                             If selling, price? If loaning, price for 6 months?
@@ -71,8 +79,9 @@ function Header(){
                         </Modal.Footer>
                     </Modal>
 
-                    <button className='header_button col-2'>Orders/Returns</button>
-                    <a className='col-1' href='/cart'><img className='header_cart' src={'cart.png'} alt='cart'></img></a>
+                    <a className='col-2' href='/orderHistory'><button className='header_button'>Order History</button></a>
+                    
+                    <a className='col-2' href='/cart'><button className='header_button cart'>Cart</button></a>
                 </div>
                 
             </div>

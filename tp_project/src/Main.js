@@ -1,7 +1,7 @@
 import React from 'react'
 import './Main/Main.css'
-import seller from './Main/seller_pic.png'
-import buyer from './Main/buyer_pic.png'
+import seller from './Main/business1.png'
+import buyer from './Main/student.png'
 
 import logoReact from './Main/react_logo.png'
 import logoPostgresql from './Main/postgresql_logo.png'
@@ -14,8 +14,8 @@ function Main(){
 
     const navigate = useNavigate();
 
-    const navigateTocreateListing = () => {
-        navigate('/createListing')
+    const navigateToforSellers = () => {
+        navigate('/forSellers')
     }
 
     const navigateToShop = () => {
@@ -34,13 +34,13 @@ function Main(){
                     <div className='main_sellers col-5 '>
                         <img className=' main_img col-12 d-flex justify-content-center' src={seller} alt='not found' height={350} ></img>
                         <br></br>
-                        <h5>For Sellers</h5>
+                        <h5>For Sellers & Businesses</h5>
                         <h3>Reach new customers and grow your business!</h3>
                         <p>We make it easy for you to to sell directly to consumers. Simply make an account
                             and you can start creating listings. We take care of everything so you can have peace of mind. 
                         </p>
                         <div className='col d-flex justify-content-center '>
-                            <button onClick={navigateTocreateListing}>Lets Go!</button>
+                            <button onClick={navigateToforSellers}>More Info!</button>
                             <br></br>
                             <br></br>
                         </div>
@@ -49,7 +49,7 @@ function Main(){
                     <div className='main_buyers col-5'>
                         <img className=' main_img col-12 d-flex justify-content-center' src={buyer} alt='not found' height={350}></img>
                         <br></br>
-                        <h5>For Buyers</h5>
+                        <h5>For Buyers & Students</h5>
                         <h3>Browse our listings and find what your searching for!</h3>
                         <p>We keep our prices are transparent as possible. You can begin browsing without an account. </p>
                         <br></br>
