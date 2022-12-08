@@ -1,0 +1,35 @@
+.business_pic{
+    background-color: #56018D;
+    padding: 4px;
+    border-radius: 6%;
+    border: solid;
+    border-color: whitesmoke;
+    border-width: 4px;   
+    height: 400px;
+    width: 400px;
+}
+
+video{
+    background-color: #56018D;
+    padding: 4px;
+    border-radius: 6%;
+    border: solid;
+    border-color: whitesmoke;
+    border-width: 4px; 
+}
+
+.forSellers_statement{
+    background-color: lightgrey;
+    color:#e55381;
+    padding: 4px;
+   
+}
+
+.forSellers{
+    margin-left: 10px;
+    
+    color: #56018D;
+    border-style: solid;
+    border-color: #03012C;
+    border-width: 4px;
+}

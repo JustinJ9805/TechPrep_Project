@@ -1,10 +1,10 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap';
+
 import './Cart.css'
 import PayPal from './PayPal.js'
 
 
-function Cart(props){
+function Cart(){
     return(
         <div className='container-fluid'>
             <br></br>
@@ -27,8 +27,6 @@ function Cart(props){
                     
                     
             </div>
-
-            
 
             <br></br>
             <br></br>
