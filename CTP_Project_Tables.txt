@@ -1,0 +1,129 @@
+use ctp_project;
+
+SELECT * 
+FROM author;
+
+CREATE TABLE user(
+User_id INT(30) NOT NULL,
+Username VARCHAR(50),
+User_password VARCHAR(50), 
+fname VARCHAR(50),
+mint  VARCHAR(1),
+lname VARCHAR(50),
+User_address VARCHAR(50),
+Zip INT,
+Apt VARCHAR(4),
+State VARCHAR(2),
+City VARCHAR(50),
+User_phonenumber int(11),
+User_email VARCHAR(50), 
+
+PRIMARY KEY (User_id)
+);
+
+CREATE TABLE user_payment(
+users_id INT(10),
+payment_type VARCHAR(50),
+provider VARCHAR(50),
+account_no INT,
+expiry DATE,
+
+FOREIGN KEY(users_id) REFERENCES user(user_id)
+);
+
+CREATE TABLE book(
+book_id INT(10),
+book_name VARCHAR(50),
+book_isbn INT(30),
+book_publisher_id INT(10), 
+book_edition INT(10),
+book_price DECIMAL(10,2),
+
+PRIMARY KEY(book_id),
+FOREIGN KEY(book_publisher_id) REFERENCES publisher(publisher_id)
+);
+
+CREATE TABLE publisher(
+publisher_id INT(10),
+publisher_name VARCHAR(30),
+
+PRIMARY KEY(publisher_id)
+);
+
+CREATE TABLE author(
+authors_id INT(10),
+fname VARCHAR(30),
+mint VARCHAR(30),
+lname VARCHAR(30),
+
+PRIMARY KEY(authors_id)
+);
+
+CREATE TABLE book_authors(
+author_id INT(10) NOT NULL,
+books_id INT(10) NOT NULL,
+
+PRIMARY KEY (author_id,books_id),
+
+FOREIGN KEY(author_id) REFERENCES author(authors_id),
+FOREIGN KEY(books_id) REFERENCES book(book_id)
+);
+
+CREATE TABLE book_inventory(
+inventory_book_id INT,
+quantity INT,
+
+FOREIGN KEY(inventory_book_id) REFERENCES book(book_id)
+);
+
+CREATE TABLE cart_item(
+cart_id INT,
+cart_session_id INT,
+cart_book_id INT,
+quantity INT, 
+
+PRIMARY KEY(cart_id),
+FOREIGN KEY(cart_session_id) REFERENCES shop_session(session_id),
+FOREIGN KEY(cart_book_id) REFERENCES book(book_id)
+);
+
+CREATE TABLE shop_session(
+session_id INT,
+session_user_id INT,
+total DECIMAL(10,2),
+
+PRIMARY KEY(session_id),
+FOREIGN KEY(session_user_id) REFERENCES user(user_id)
+);
+
+CREATE TABLE order_items(
+item_id INT,
+item_order_id INT,
+item_book_id INT,
+quantity INT,
+
+PRIMARY KEY(item_id),
+FOREIGN KEY(item_order_id) REFERENCES order_detail(order_id),
+FOREIGN KEY(item_order_id) REFERENCES book(book_id)
+);
+
+CREATE TABLE order_detail(
+order_id INT,
+order_users_id INT,
+order_total DECIMAL(10,2),
+order_payment_id INT,
+
+PRIMARY KEY (order_id),
+FOREIGN KEY(order_users_id) REFERENCES user(user_id),
+FOREIGN KEY(order_payment_id) REFERENCES payment_deatail(payment_id)
+);
+
+CREATE TABLE payment_deatail(
+payment_id INT,
+amount DECIMAL(10,2),
+provider VARCHAR(50),
+payment_status VARCHAR(50),
+
+PRIMARY KEY(payment_id)
+);
+

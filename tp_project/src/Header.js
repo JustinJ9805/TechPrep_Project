@@ -63,19 +63,25 @@ function Header(){
                                 <option>Loan it out</option>
                                 <option>Sell it</option>
                             </select>
+                            Type?
+                            <br></br>
+                            <select>
+                                <option>Hardcover</option>
+                                <option>Paperback</option>
+                            </select>
                             <br></br>
                             If selling, price? If loaning, price for 6 months?
                             <input type={'text'} placeholder='Price...'/>
                             <br></br>
                             Upload picture of item
-                            <input type={'file'}></input>
+                            <input className='image' type={'file'}></input>
                             <br></br>
                             <br></br>
                             
                         </Modal.Body>
                         <Modal.Footer>
-                            <Button onClick={handleClose}>Create Listing</Button>
-                            <Button onClick={handleClose}>Cancel</Button>
+                            <Button onClick={handleClose2}>Create Listing</Button>
+                            <Button onClick={handleClose2}>Cancel</Button>
                         </Modal.Footer>
                     </Modal>
 
