@@ -1,35 +1,48 @@
-.books {
+/* .books {
     background-color:lightyellow;
     color:darkslategray;
-}
+} */
+
 .bookEntry{
-    background-color: rgba(211, 211, 211, .5);
+    background-color: #56018D;
     margin: 4px 2px;
     padding-left: 12.5%;
     padding-bottom: 8px;
     padding-top: 8px;
-    
+    color: #e1dee9;
+    border-style: solid;
+    border-color: #03012C;
+    border-width: 4px;
 }
 
 
 .books_button{
-    padding: 4px 16px;
-    margin: 4px;
-    background-color: gray;
-    color: white;
-    border-color: black;
+    background-color: #e1dee9;
+    border-style: solid;
+    border-color: #e55381;
+    color: #56018D;
+    padding: 4px;
+    height: 40px;
+    width: 150px;
+    border-width: 4px;
+    border-radius: 12.5%;
+    font-weight: bold;
 }
+
 .bookImg{
     height: 200px;
+    width: auto;
+    border-radius: 6%;
+    border: solid;
+    border-color: whitesmoke;
+    border-width: 4px;
+    padding: 0px;
 }
 
-
-
-.searchBar{
-    width: 1000px;
-    padding-left: 12.5%;
-    
+.bookImg:hover{
+    border-color: blue;
 }
+
 .bookHeader{
     padding-left: 12.5%;
 }
