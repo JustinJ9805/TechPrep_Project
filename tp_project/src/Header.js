@@ -25,6 +25,7 @@ function Header(){
                         </Modal.Header>
                         <Modal.Body>
                             You can browse without signing in - once you are ready to checkout you will need to make an account!
+                            <br></br>
                             <input type={'text'} name={'username'} placeholder={'Username'}></input>
                             <br></br>
                             <input type={'password'} name={'password'} placeholder={'Password'}></input>
@@ -63,6 +64,7 @@ function Header(){
                                 <option>Loan it out</option>
                                 <option>Sell it</option>
                             </select>
+                            <br></br>
                             Type?
                             <br></br>
                             <select>
@@ -74,6 +76,7 @@ function Header(){
                             <input type={'text'} placeholder='Price...'/>
                             <br></br>
                             Upload picture of item
+                            <br></br>
                             <input className='image' type={'file'}></input>
                             <br></br>
                             <br></br>

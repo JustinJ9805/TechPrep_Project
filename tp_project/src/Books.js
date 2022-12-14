@@ -12,7 +12,6 @@ function Books(){
         <div className='books container-fluid'>
             <div className='row'>
             <br></br>
-        
             {
             bookData.map(books => {
                 return(
